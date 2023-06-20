@@ -8,7 +8,7 @@ export const createTodo = createAsyncThunk(
   async ({ formData, navigate }, { rejectWithValue }) => {
     try {
       const response = await axios.post(
-        `http://localhost:4000/api/v1/todos/create`,
+        `https://mern-todo-one-plum.vercel.app/api/v1/todos/create`,
         formData
       );
       toast.success(response.data.message, {
@@ -37,7 +37,7 @@ export const deleteTodo = createAsyncThunk(
   async ({ _id }, { rejectWithValue }) => {
     try {
       const response = await axios.delete(
-        `http://localhost:4000/api/v1/todos/delete/${_id}`
+        `https://mern-todo-one-plum.vercel.app/api/v1/todos/delete/${_id}`
       );
       toast.success(response.data.message, {
         duration: 2000,
@@ -64,7 +64,7 @@ export const deleteAllTodo = createAsyncThunk(
   async (_, { rejectWithValue }) => {
     try {
       const response = await axios.delete(
-        `http://localhost:4000/api/v1/todos/all/delete`
+        `https://mern-todo-one-plum.vercel.app/api/v1/todos/all/delete`
       );
       toast.success(response.data.message, {
         duration: 2000,
@@ -91,7 +91,7 @@ export const updateTodo = createAsyncThunk(
   async ({ _id, formData }, { rejectWithValue }) => {
     try {
       const response = await axios.patch(
-        `http://localhost:4000/api/v1/todos/update/${_id}`,
+        `https://mern-todo-one-plum.vercel.app/api/v1/todos/update/${_id}`,
         formData
       );
       toast.success(response.data.message, {
@@ -119,7 +119,7 @@ export const getTodo = createAsyncThunk(
   async (_, { rejectWithValue }) => {
     try {
       const response = await axios.get(
-        `http://localhost:4000/api/v1/todos/one/`
+        `https://mern-todo-one-plum.vercel.app/api/v1/todos/one/`
       );
       return response.data.todos;
     } catch (error) {
@@ -143,7 +143,7 @@ export const getTodos = createAsyncThunk(
   async (_, { rejectWithValue }) => {
     try {
       const response = await axios.get(
-        `http://localhost:4000/api/v1/todos/all`
+        `https://mern-todo-one-plum.vercel.app/api/v1/todos/all`
       );
       return response.data.todos;
     } catch (error) {

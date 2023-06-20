@@ -7,10 +7,7 @@ yarn-error.log*
 pnpm-debug.log*
 lerna-debug.log*
 
-# Ignore node_modules directory
-node_modules/
-
-
+/node_modules
 dist
 dist-ssr
 *.local
