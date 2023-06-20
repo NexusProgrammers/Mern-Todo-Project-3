@@ -10,12 +10,7 @@ dotenv.config({
 
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
-app.use(
-  cors({
-    origin: ["http://localhost:4000", "http://localhost:5173"],
-    credentials: true,
-  })
-);
+app.use(cors({ credentials: true, origin: "http://localhost:3000" }));
 
 app.use("/api/v1/todos", todoRouter);
 
